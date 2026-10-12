@@ -1,14 +1,10 @@
 
 /* =====================================================
    18 MONTHS — us together ♡
-   Main scrapbook settings
-   Edit your photo notes and letter in this file.
+   Single portrait-page scrapbook
 ===================================================== */
 
-/* 1. YOUR MEMORY PHOTOS AND NOTES
-   Keep photos inside: images/memories/
-   Use the exact filename and extension.
-*/
+/* 1. MEMORY PHOTOS AND NOTES */
 
 const memories = {
   hyderabad: [
@@ -61,9 +57,7 @@ const memories = {
 };
 
 
-/* 2. THE LONG LETTER
-   Replace this sample text with your own message later.
-*/
+/* 2. THE LONG LETTER */
 
 const finalLetter = `
 Eighteen months of memories, little moments,
@@ -82,9 +76,8 @@ one little moment at a time. ♡
 `;
 
 
-/* 3. SCRAPBOOK CONTENT
-   These nine spreads create 18 inside pages.
-   Each spread contains a left and a right page.
+/* 3. SCRAPBOOK STORY
+   Nine chapters × two pages = 18 individual pages.
 */
 
 const spreads = [
@@ -237,7 +230,15 @@ const spreads = [
 ];
 
 
-/* 4. PAGE ELEMENTS */
+/* 4. CONVERT THE NINE SPREADS INTO 18 PAGES */
+
+const pages = spreads.flatMap((spread, index) => [
+  { ...spread.left, chapterLabel: spread.label },
+  { ...spread.right, chapterLabel: spread.label }
+]);
+
+
+/* 5. PAGE ELEMENTS */
 
 const book = document.getElementById("book");
 const cover = document.getElementById("cover");
@@ -263,11 +264,12 @@ const closeLetterButton = document.getElementById("closeLetter");
 const backgroundMusic = document.getElementById("backgroundMusic");
 const musicToggle = document.getElementById("musicToggle");
 
-let currentSpread = 0;
+let currentPage = 0;
 let bookOpened = false;
+let isTurningPage = false;
 
 
-/* 5. HELPER: ESCAPE TEXT BEFORE PUTTING IT INTO HTML */
+/* 6. ESCAPE HTML */
 
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, character => ({
@@ -280,7 +282,7 @@ function escapeHTML(value) {
 }
 
 
-/* 6. BUILD A PHOTO AND ITS EDITABLE NOTE */
+/* 7. BUILD A MEMORY PHOTO */
 
 function createMemory(group, index) {
   const photo = memories[group]?.[index];
@@ -311,13 +313,15 @@ function createMemory(group, index) {
 }
 
 
-/* 7. BUILD A PAGE */
+/* 8. BUILD ONE PORTRAIT PAGE */
 
-function buildPage(page, pageSide) {
+function buildPage(page) {
   let html = "";
 
   if (page.eyebrow) {
-    html += `<p class="eyebrow">${escapeHTML(page.eyebrow)}</p>`;
+    html += `
+      <p class="eyebrow">${escapeHTML(page.eyebrow)}</p>
+    `;
   }
 
   if (page.title) {
@@ -325,11 +329,15 @@ function buildPage(page, pageSide) {
       ? "script-heading"
       : "page-heading";
 
-    html += `<h2 class="${headingClass}">${escapeHTML(page.title)}</h2>`;
+    html += `
+      <h2 class="${headingClass}">${escapeHTML(page.title)}</h2>
+    `;
   }
 
   if (page.text) {
-    html += `<p class="page-copy">${escapeHTML(page.text)}</p>`;
+    html += `
+      <p class="page-copy">${escapeHTML(page.text)}</p>
+    `;
   }
 
   if (page.photoGroup) {
@@ -338,7 +346,11 @@ function buildPage(page, pageSide) {
 
   if (page.hiddenMessage) {
     html += `
-      <button class="hidden-note" data-hidden-message="${escapeHTML(page.hiddenMessage)}">
+      <button
+        class="hidden-note"
+        data-hidden-message="${escapeHTML(page.hiddenMessage)}"
+        type="button"
+      >
         tap here for a little secret ♡
       </button>
     `;
@@ -346,48 +358,67 @@ function buildPage(page, pageSide) {
 
   if (page.envelope) {
     html += `
-      <button class="envelope" id="openLetter" aria-label="Open your letter"></button>
+      <button
+        class="envelope"
+        id="openLetter"
+        aria-label="Open your letter"
+        type="button"
+      ></button>
       <p class="page-copy">A little something, from my heart.</p>
     `;
   }
 
   if (page.ornament) {
-    html += `<p class="ornament">${escapeHTML(page.ornament)}</p>`;
+    html += `
+      <p class="ornament">${escapeHTML(page.ornament)}</p>
+    `;
   }
 
   return html;
 }
 
 
-/* 8. DISPLAY THE CURRENT SPREAD */
+/* 9. DISPLAY ONE PAGE AT A TIME */
 
-function renderSpread() {
-  const spread = spreads[currentSpread];
+function renderPage() {
+  const page = pages[currentPage];
 
-  leftContent.innerHTML = buildPage(spread.left, "left");
-  rightContent.innerHTML = buildPage(spread.right, "right");
+  if (!page) return;
 
-  leftNumber.textContent = String(currentSpread * 2 + 1).padStart(2, "0");
-  rightNumber.textContent = String(currentSpread * 2 + 2).padStart(2, "0");
+  // Hide the left sheet: only one portrait page is shown.
+  if (leftPage) {
+    leftPage.classList.remove("visible");
+    leftPage.hidden = true;
+  }
 
-  leftPage.classList.add("visible");
+  // Use the existing right-page element as the single page.
+  rightPage.hidden = false;
+  rightContent.innerHTML = buildPage(page);
   rightPage.classList.add("visible");
 
-  pageCounter.textContent = spread.label;
+  // Show the real page number from 01 to 18.
+  if (leftNumber) {
+    leftNumber.textContent = "";
+  }
 
-  prevButton.disabled = currentSpread === 0;
-  nextButton.disabled = currentSpread === spreads.length - 1;
+  rightNumber.textContent = String(currentPage + 1).padStart(2, "0");
 
+  pageCounter.textContent = page.chapterLabel;
+
+  prevButton.disabled = currentPage === 0;
+  nextButton.disabled = currentPage === pages.length - 1;
+
+  // Attach the letter button only when it exists on this page.
   const envelopeButton = document.getElementById("openLetter");
 
   if (envelopeButton) {
     envelopeButton.addEventListener("click", openLetter);
   }
 
-  document.querySelectorAll("[data-hidden-message]").forEach(button => {
+  // Reveal the hidden note when tapped.
+  rightContent.querySelectorAll("[data-hidden-message]").forEach(button => {
     button.addEventListener("click", () => {
-      const message = button.dataset.hiddenMessage;
-      button.textContent = message;
+      button.textContent = button.dataset.hiddenMessage;
       button.disabled = true;
       button.style.textDecoration = "none";
     });
@@ -395,7 +426,7 @@ function renderSpread() {
 }
 
 
-/* 9. OPEN THE BOOK */
+/* 10. OPEN THE SCRAPBOOK */
 
 function openBook() {
   if (bookOpened) return;
@@ -405,63 +436,79 @@ function openBook() {
 
   window.setTimeout(() => {
     cover.style.display = "none";
-    renderSpread();
+    renderPage();
   }, 650);
 }
 
 openBookButton.addEventListener("click", openBook);
 
 
-/* 10. TURN PAGES */
+/* 11. TURN INDIVIDUAL PAGES */
 
-function turnToSpread(nextIndex) {
-  if (!bookOpened) return;
+function turnToPage(nextIndex) {
+  if (!bookOpened || isTurningPage) return;
 
-  if (nextIndex < 0 || nextIndex >= spreads.length) return;
+  if (nextIndex < 0 || nextIndex >= pages.length) return;
 
-  leftPage.classList.remove("visible");
+  isTurningPage = true;
+
   rightPage.classList.remove("visible");
 
   window.setTimeout(() => {
-    currentSpread = nextIndex;
-    renderSpread();
+    currentPage = nextIndex;
+    renderPage();
+
+    window.requestAnimationFrame(() => {
+      rightPage.classList.add("visible");
+      isTurningPage = false;
+    });
   }, 180);
 }
 
 prevButton.addEventListener("click", () => {
-  turnToSpread(currentSpread - 1);
+  turnToPage(currentPage - 1);
 });
 
 nextButton.addEventListener("click", () => {
-  turnToSpread(currentSpread + 1);
+  turnToPage(currentPage + 1);
 });
 
 
-/* 11. SEALED LETTER */
+/* 12. SEALED LETTER */
 
 function openLetter() {
   letterText.textContent = finalLetter;
 
   if (typeof letterDialog.showModal === "function") {
-    letterDialog.showModal();
+    if (!letterDialog.open) {
+      letterDialog.showModal();
+    }
   } else {
     letterDialog.setAttribute("open", "");
   }
 }
 
 closeLetterButton.addEventListener("click", () => {
-  letterDialog.close();
+  if (typeof letterDialog.close === "function") {
+    letterDialog.close();
+  } else {
+    letterDialog.removeAttribute("open");
+  }
 });
 
 letterDialog.addEventListener("click", event => {
   if (event.target === letterDialog) {
-    letterDialog.close();
+    if (typeof letterDialog.close === "function") {
+      letterDialog.close();
+    } else {
+      letterDialog.removeAttribute("open");
+    }
   }
 });
 
 
-/* 12. MUSIC
-   Add music/18m.mp3 when you're ready.
+/* 13. BACKGROUND MUSIC
+   Add your file at docs/music/18m.mp3.
 */
 
 backgroundMusic.src = "music/18m.mp3";
@@ -484,21 +531,30 @@ musicToggle.addEventListener("click", async () => {
 });
 
 
-/* 13. KEYBOARD NAVIGATION */
+/* 14. KEYBOARD NAVIGATION */
 
 document.addEventListener("keydown", event => {
   if (!bookOpened || letterDialog.open) return;
 
   if (event.key === "ArrowRight") {
-    turnToSpread(currentSpread + 1);
+    turnToPage(currentPage + 1);
   }
 
   if (event.key === "ArrowLeft") {
-    turnToSpread(currentSpread - 1);
+    turnToPage(currentPage - 1);
   }
 });
 
 
-/* 14. READY */
+/* 15. INITIAL SETUP */
 
 letterText.textContent = finalLetter;
+
+// Keep the left sheet hidden from the start.
+if (leftPage) {
+  leftPage.hidden = true;
+  leftPage.classList.remove("visible");
+}
+
+// The book cover remains visible until the user opens it.
+rightPage.hidden = false;
