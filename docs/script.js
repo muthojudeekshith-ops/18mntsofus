@@ -224,11 +224,9 @@ const pages = [
     chapterLabel: "TO BE CONTINUED",
     eyebrow: "18 MONTHS AND COUNTING",
     title: "OUR LOVE will be continued…",
-     text: "&",
-    title: "US WILL REMAIN US ",
    isFinalPage: true,
     text: "This book holds some of our memories, but our story is still going.",
-    script: "We will have INFINITE cute and best Memories. ♡",
+    script: "We will have INFINITE cute and best Memories. AND US WILL REMAIN US FOREVER ♡",
     ornament: "✧ · ── ♡ ── · ✧"
   }
 ];
