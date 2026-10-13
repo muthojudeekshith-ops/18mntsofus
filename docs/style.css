@@ -752,3 +752,30 @@ button { font: inherit; cursor: pointer; }
   font-size: 14px;
   color: #624638;
 }
+/* FINAL PAGE — softer antique book appearance */
+.book.final-book {
+  filter: drop-shadow(0 24px 22px rgba(0, 0, 0, .45));
+}
+
+.book.final-book::before {
+  background: #e8dfce;
+  border-color: #c8bda8;
+  box-shadow: 0 0 0 3px #d2c6b1, 0 0 0 5px #b7a991;
+}
+
+.book.final-book::after {
+  background: repeating-linear-gradient(
+    to bottom,
+    #f3ead9 0 2px,
+    #c8bba4 2px 3px
+  );
+}
+
+/* Final-page typography only */
+.final-page .page-heading,
+.final-page .page-copy,
+.final-page .eyebrow,
+.final-page .ornament,
+.final-page .page-number {
+  font-family: 'Cormorant Garamond', serif;
+}
