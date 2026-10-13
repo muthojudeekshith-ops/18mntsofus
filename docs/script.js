@@ -158,7 +158,7 @@ const pages = [
     eyebrow: "A DAY THAT MATTERED",
     title: "Birthday memories",
     text: "Some birthdays are remembered for the day itself. Some are remembered for the person who made them feel different, And that was my craziest , special birthdayy I ever had...",
-     text: "I LOVE YOU SO MUCHH ⋆｡°✩ ♡ ✩°｡⋆ ...",
+    extratext: "I LOVE YOU SO MUCHH ⋆｡°✩ ♡ ✩°｡⋆ ...",
     ornament: "♡"
   },
 
@@ -179,7 +179,7 @@ const pages = [
   },
 
   {
-    chapterLabel: 31-07-2026",
+    chapterLabel: "31-07-2026",
     eyebrow: "AND THEN WE MET AGAIN",
     title: "THE SHORT WAIT",
     text: "Sometimes, even a short wait makes seeing someone again feel extra special. This was another great little moment for our reality.",
@@ -304,6 +304,10 @@ function buildPage(page) {
   if (page.text) {
     html += `<p class="page-copy">${escapeHTML(page.text)}</p>`;
   }
+
+if (page.extraText) {
+  html += `<p class="page-copy">${escapeHTML(page.extraText)}</p>`;
+}
 
   if (page.photoGroup) {
     html += createMemory(page.photoGroup, page.photoIndex ?? 0);
@@ -495,8 +499,6 @@ function openLetter(){
   }else{
     letterDialog.setAttribute("open","");
   }
-}
-
 }
 
 closeLetterButton.addEventListener("click", () => {
