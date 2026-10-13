@@ -594,7 +594,7 @@ if (leftPage) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (input.value.trim().toLowerCase() !== "book") {
+    if (input.value.trim().toLowerCase() !== "usforever") {
       message.textContent = "Not quite, sweetheart. Try again ♡";
       gate.classList.remove("shake");
       void gate.offsetWidth;
