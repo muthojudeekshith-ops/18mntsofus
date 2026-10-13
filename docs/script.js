@@ -222,6 +222,7 @@ const spreads = [
     right: {
       eyebrow: "18 MONTHS AND COUNTING",
       title: "To be continued…",
+      isFinalPage: true,
       text: "This book holds some of our memories, but our story is still going.",
       script: "Infinite little moments more. ♡",
       ornament: "✧ · ── ♡ ── · ✧"
