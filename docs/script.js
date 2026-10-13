@@ -19,7 +19,7 @@ const memories = {
   birthday: [
     {
       photo: "28m1.jpeg",
-      note: "My birthday became more special because of you. ♡"
+      note: "My birthday became more special because of you. 𓆩♡𓆪"
     },
     {
       photo: "28m2.jpeg",
@@ -30,7 +30,7 @@ const memories = {
   afterThreeDays: [
     {
       photo: "31m1.jpeg",
-      note: "Three days later, and there we were again. ❤️"
+      note: "And 3 days later my b'day , we relly met again, That was amazing day ❀∿. "
     },
     {
       photo: "31m2.jpeg",
@@ -84,17 +84,17 @@ const pages = [
     chapterLabel: "BEFORE WE BEGIN",
     eyebrow: "18 MONTHS",
     title: "Our little world",
-    text: "Eighteen months of us. Not just the big days, but all the little things that made this journey ours.",
+    text: "Eighteen months of us❋. Not just the big days, but all the little things that made this journey ours.",
     script: "And we're still writing…",
     ornament: "♡"
   },
 
   {
     chapterLabel: "OUR FIRST YEAR",
-    eyebrow: "CHAPTER ONE",
+    eyebrow: "OUR FIRST YEAR",
     title: "The beginning",
-    text: "Our first year was filled with little moments that became big memories. We found our own ways to care, to laugh, to miss each other, and to keep choosing us. And somehow, one memory at a time, we made a little world of our own.",
-    ornament: "♡"
+    text: "Our first year was filled with little moments that became big memories. We found our own ways to care, to laugh, to miss each other, and to keep choosing us. And somehow, one memory at a time, we made a little world of our own✨.",
+    ornament: "♡⃝♡"
   },
 
   {
@@ -123,8 +123,8 @@ const pages = [
 
   {
     chapterLabel: "HYDERABAD",
-    eyebrow: "KEPT BETWEEN THESE PAGES",
-    title: "Another Hyderabad memory",
+    eyebrow: "THIS IS HOW",
+    title: "cute my view seems",
     photoGroup: "hyderabad",
     photoIndex: 1
   },
@@ -141,12 +141,12 @@ const pages = [
     chapterLabel: "JAGTIAL DAYS",
     eyebrow: "A DAY TO REMEMBER",
     title: "A little adventure",
-    text: "A place becomes special in a different way when it holds a memory of us. Jagtial will always be part of this chapter.",
-    ornament: "♡ · ✧ · ♡"
+    text: "The journey  to jagtial together was an amazing thing, that we ever thought of.",
+    ornament: "♡ · ୨୧ · ♡"
   },
 
   {
-    chapterLabel: "JAGTIAL DAYS",
+    chapterLabel: "BAMBILONI DAY",
     eyebrow: "A DAY WITH YOU",
     title: "Saved in my heart",
     photoGroup: "general",
@@ -154,15 +154,16 @@ const pages = [
   },
 
   {
-    chapterLabel: "YOUR BIRTHDAY",
+    chapterLabel: "MY BIRTHDAY",
     eyebrow: "A DAY THAT MATTERED",
     title: "Birthday memories",
-    text: "Some birthdays are remembered for the day itself. Some are remembered for the person who made them feel different.",
+    text: "Some birthdays are remembered for the day itself. Some are remembered for the person who made them feel different, And that was my craziest , special birthdayy I ever had...",
+     text: "I LOVE YOU SO MUCHH ⋆｡°✩ ♡ ✩°｡⋆ ...",
     ornament: "♡"
   },
 
   {
-    chapterLabel: "YOUR BIRTHDAY",
+    chapterLabel: "MY GREATFUL DAY",
     eyebrow: "ONE OF MY FAVOURITES",
     title: "That day with you",
     photoGroup: "birthday",
@@ -170,7 +171,7 @@ const pages = [
   },
 
   {
-    chapterLabel: "YOUR BIRTHDAY",
+    chapterLabel: "MY GREATFUL DAY",
     eyebrow: "ONE MORE BIRTHDAY MEMORY",
     title: "A little piece of that day",
     photoGroup: "birthday",
@@ -178,25 +179,25 @@ const pages = [
   },
 
   {
-    chapterLabel: "THREE DAYS LATER",
+    chapterLabel: 31-07-2026",
     eyebrow: "AND THEN WE MET AGAIN",
-    title: "Just three days later",
-    text: "Sometimes, even a short wait makes seeing someone again feel extra special. This was another little moment for our collection.",
+    title: "THE SHORT WAIT",
+    text: "Sometimes, even a short wait makes seeing someone again feel extra special. This was another great little moment for our reality.",
     ornament: "✧ ♡ ✧"
   },
 
   {
-    chapterLabel: "THREE DAYS LATER",
-    eyebrow: "ANOTHER PAGE OF US",
-    title: "Together, again",
+    chapterLabel: "THIRTY FIRST - JULY - 2026",
+    eyebrow: "THE NIGHT WE WERE IN ☘𖧷",
+    title: "KEPT CLOSE",
     photoGroup: "afterThreeDays",
     photoIndex: 0
   },
 
   {
-    chapterLabel: "THREE DAYS LATER",
-    eyebrow: "KEPT CLOSE",
-    title: "The next little memory",
+    chapterLabel: "३१-०७-२०२६",
+    eyebrow: "closest love",
+    title: "THE NIGHT WE WERE EVERYTHING",
     photoGroup: "afterThreeDays",
     photoIndex: 1,
     hiddenMessage: "Some moments are small to everyone else, but mean the world to me. ♡"
@@ -204,14 +205,14 @@ const pages = [
 
   {
     chapterLabel: "OUR LITTLE THINGS",
-    eyebrow: "THE THINGS THAT STAY",
-    title: "The little details",
-    text: "Not every memory needs a big story. Some deserve a place here simply because they mean something to us.",
+    eyebrow: "˚ʚ♡ɞ˚",
+    title: "THE I WANT TO SAY IS ",
+    text: " Everything of you maynot be perfect , and you being you seems perfect❃.",
     ornament: "♡"
   },
 
   {
-    chapterLabel: "TO BE CONTINUED",
+    chapterLabel: "OUR LOVE BE CONTINUED",
     eyebrow: "ONE LAST THING",
     title: "A letter for you",
     text: "There are some things I'd rather leave in a letter, just for you.",
@@ -222,10 +223,12 @@ const pages = [
   {
     chapterLabel: "TO BE CONTINUED",
     eyebrow: "18 MONTHS AND COUNTING",
-    title: "To be continued…",
-    isFinalPage: true,
+    title: "OUR LOVE will be continued…",
+     text: "&",
+   tittle: "US WILL REMAIN US ",
+   isFinalPage: true,
     text: "This book holds some of our memories, but our story is still going.",
-    script: "Infinite little moments more. ♡",
+    script: "We will have INFINITE cute and best Memories. ♡",
     ornament: "✧ · ── ♡ ── · ✧"
   }
 ];
