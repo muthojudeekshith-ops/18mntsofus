@@ -225,7 +225,7 @@ const pages = [
     eyebrow: "18 MONTHS AND COUNTING",
     title: "OUR LOVE will be continued…",
      text: "&",
-   tittle: "US WILL REMAIN US ",
+    title: "US WILL REMAIN US ",
    isFinalPage: true,
     text: "This book holds some of our memories, but our story is still going.",
     script: "We will have INFINITE cute and best Memories. ♡",
