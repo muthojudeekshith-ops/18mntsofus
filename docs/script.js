@@ -379,6 +379,17 @@ function renderPage(animationClass = "") {
   if (book) book.classList.remove("final-book");
 }
   rightContent.innerHTML = buildPage(page);
+   if (page.isFinalPage) {
+  rightContent.querySelectorAll('.script-heading, .photo-note')
+    .forEach(el => {
+      el.style.setProperty(
+        'font-family',
+        "'Cormorant Garamond', serif",
+        'important'
+      );
+      el.style.setProperty('font-style', 'normal', 'important');
+    });
+}
 
   rightNumber.textContent = String(currentPage + 1).padStart(2, "0");
 
