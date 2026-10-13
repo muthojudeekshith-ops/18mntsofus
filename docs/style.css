@@ -779,10 +779,11 @@ button { font: inherit; cursor: pointer; }
 .final-page .page-number {
   font-family: 'Cormorant Garamond', serif;
 }
-/* Final page: make title and script match the text font */
-.final-page .page-heading,
-.final-page .script-heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: normal;
+
+/* FINAL PAGE — match title and script to body font */
+.final-page .script-heading,
+.final-page .photo-note {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-style: normal !important;
   font-weight: 500;
 }
