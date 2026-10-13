@@ -469,16 +469,34 @@ nextButton.addEventListener("click", () => {
 });
 
 /* Open and close the letter popup. */
-function openLetter() {
-  letterText.textContent = finalLetter;
 
-  if (typeof letterDialog.showModal === "function") {
-    if (!letterDialog.open) {
-      letterDialog.showModal();
-    }
-  } else {
-    letterDialog.setAttribute("open", "");
+function openLetter(){
+  letterText.innerHTML = `
+    <p>${finalLetter.split("\n\n")[0]}</p>
+    <div class="letter-memory-gallery">
+      <figure>
+        <img src="images/memories/m4.jpeg" alt="A special memory">
+        <figcaption>One more little piece of us ♡</figcaption>
+      </figure>
+      <figure>
+        <img src="images/memories/m5.jpeg" alt="Another special memory">
+        <figcaption>A moment I want to keep forever.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/memories/m6.jpeg" alt="A memory close to my heart">
+        <figcaption>And so many more memories to make. ♡</figcaption>
+      </figure>
+    </div>
+    <p>${finalLetter.split("\n\n").slice(1).join("\n\n").replace(/\n/g,"<br>")}</p>
+  `;
+
+  if(typeof letterDialog.showModal==="function"){
+    if(!letterDialog.open)letterDialog.showModal();
+  }else{
+    letterDialog.setAttribute("open","");
   }
+}
+
 }
 
 closeLetterButton.addEventListener("click", () => {
