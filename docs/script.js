@@ -372,9 +372,14 @@ function renderPage(animationClass = "") {
   );
 
   if (page.isFinalPage) {
-    rightPage.classList.add("final-page");
-  }
+  rightPage.classList.add("final-page");
 
+  const book = document.querySelector(".book");
+  if (book) book.classList.add("final-book");
+} else {
+  const book = document.querySelector(".book");
+  if (book) book.classList.remove("final-book");
+}
   rightContent.innerHTML = buildPage(page);
 
   rightNumber.textContent = String(currentPage + 1).padStart(2, "0");
