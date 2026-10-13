@@ -7,11 +7,9 @@
   <meta name="theme-color" content="#38251f">
   <meta name="description" content="18 months of us, kept between these pages.">
   <title>18 MONTHS — us together ♡</title>
-
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
   <div class="film-grain" aria-hidden="true"></div>
 
@@ -19,52 +17,38 @@
     <p class="top-label">A LITTLE BOOK ABOUT US</p>
 
     <section class="book" id="book" aria-label="Our scrapbook">
-
-      <!-- COVER -->
       <section class="cover page" id="cover">
         <div class="cover-border">
           <div class="cover-flower flower-top">✿</div>
-
           <p class="cover-small">A COLLECTION OF OUR LITTLE THINGS</p>
-
           <h1>18 MONTHS</h1>
           <p class="cover-subtitle">us together ♡</p>
-
           <div class="cover-divider">✧ · ── ♡ ── · ✧</div>
-
           <p class="cover-date">every little moment, kept forever</p>
-
-          <button class="open-book" id="openBook">
+          <button class="open-book" id="openBook" type="button">
             OPEN OUR BOOK <span>→</span>
           </button>
-
           <div class="cover-flower flower-bottom">❀</div>
         </div>
       </section>
 
-      <!-- LEFT PAGE -->
-      <section class="paper-page left-page" id="leftPage">
+      <section class="paper-page left-page" id="leftPage" aria-hidden="true">
         <div class="page-content" id="leftContent"></div>
         <span class="page-number" id="leftNumber"></span>
       </section>
 
-      <!-- RIGHT PAGE -->
-      <section class="paper-page right-page" id="rightPage">
+      <section class="paper-page right-page" id="rightPage" aria-label="Scrapbook page">
         <div class="page-content" id="rightContent"></div>
         <span class="page-number" id="rightNumber"></span>
       </section>
-
     </section>
 
-    <!-- NAVIGATION -->
     <nav class="book-controls" aria-label="Book navigation">
-      <button id="prevPage" disabled aria-label="Previous pages">
+      <button id="prevPage" type="button" disabled aria-label="Previous page">
         ← BACK
       </button>
-
       <span id="pageCounter">THE BEGINNING</span>
-
-      <button id="nextPage" aria-label="Next pages">
+      <button id="nextPage" type="button" aria-label="Next page">
         NEXT →
       </button>
     </nav>
@@ -72,19 +56,18 @@
     <p class="bottom-note">made with love, just for you ♡</p>
   </main>
 
-  <!-- MUSIC CONTROL: song can be added later -->
   <audio id="backgroundMusic" loop preload="none"></audio>
 
   <button
     id="musicToggle"
     class="music-toggle"
+    type="button"
     aria-label="Play or pause music"
     title="Music"
   >♫</button>
 
-  <!-- SEALED LETTER -->
   <dialog id="letterDialog" class="letter-dialog">
-    <button id="closeLetter" class="close-letter" aria-label="Close letter">×</button>
+    <button id="closeLetter" class="close-letter" type="button" aria-label="Close letter">×</button>
     <div class="letter-paper">
       <p class="eyebrow">SOMETHING FROM MY HEART</p>
       <h2>A letter for you ♡</h2>
@@ -98,4 +81,3 @@
   </noscript>
 </body>
 </html>
-
