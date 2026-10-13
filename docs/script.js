@@ -579,3 +579,42 @@ const leftPage = document.getElementById("leftPage");
 if (leftPage) {
   leftPage.hidden = true;
 }
+
+/* ===== VINTAGE PASSWORD GATE ===== */
+(() => {
+  const gate = document.getElementById("passwordGate");
+  const form = document.getElementById("passwordForm");
+  const input = document.getElementById("bookPassword");
+  const message = document.getElementById("passwordMessage");
+
+  if (!gate || !form || !input || !message) return;
+
+  input.focus();
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (input.value.trim().toLowerCase() !== "book") {
+      message.textContent = "Not quite, sweetheart. Try again ♡";
+      gate.classList.remove("shake");
+      void gate.offsetWidth;
+      gate.classList.add("shake");
+      input.select();
+      return;
+    }
+
+    message.textContent = "The story is waiting for you ♡";
+    form.querySelector("button").disabled = true;
+    input.disabled = true;
+    gate.classList.add("unlocked");
+
+    window.setTimeout(() => {
+      document.body.classList.remove("locked");
+      gate.classList.add("leaving");
+
+      window.setTimeout(() => {
+        gate.remove();
+      }, 700);
+    }, 900);
+  });
+})();
