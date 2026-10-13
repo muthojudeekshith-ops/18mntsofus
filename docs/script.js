@@ -146,7 +146,7 @@ const pages = [
     chapterLabel: "JAGTIAL DAYS",
     eyebrow: "A DAY TO REMEMBER",
     title: "A little adventure",
-    text: "The journey  to jagtial together was an amazing thing, that we ever thought of.",
+    text: "The journey  to jagtial together was an amazing thing, that we ever thought of. But in soon i will sit in driving seat and you co-passenger seat and will be travellingg ..",
     ornament: "♡ · ୨୧ · ♡"
   },
 
