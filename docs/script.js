@@ -1,10 +1,8 @@
 
-/* =====================================================
-   18 MONTHS — us together ♡
-   Single portrait-page scrapbook
-===================================================== */
-
-/* 1. MEMORY PHOTOS AND NOTES */
+/* =========================================
+   18 MONTHS — US TOGETHER
+   Scrapbook pages, photos, stamp and effects
+========================================= */
 
 const memories = {
   hyderabad: [
@@ -56,11 +54,7 @@ const memories = {
   ]
 };
 
-
-/* 2. THE LONG LETTER */
-
-const finalLetter = `
-Eighteen months of memories, little moments,
+const finalLetter = `Eighteen months of memories, little moments,
 conversations, laughter, and everything in between.
 
 Every memory has its own place in my heart.
@@ -72,185 +66,174 @@ There are still so many moments waiting for us,
 so many memories we haven't made yet.
 
 And I hope we keep adding pages,
-one little moment at a time. ♡
-`;
+one little moment at a time. ♡`;
 
+/* Each entry is one portrait page.
+   Photos from each named group stay together. */
 
-/* 3. SCRAPBOOK STORY
-   Nine chapters × two pages = 18 individual pages.
-*/
-
-const spreads = [
+const pages = [
   {
-    label: "BEFORE WE BEGIN",
-    left: {
-      eyebrow: "A LITTLE NOTE",
-      title: "Before we begin…",
-      text: "Some stories don't need grand beginnings. Sometimes, they grow through little moments, familiar voices, and memories that slowly become everything.",
-      ornament: "✧ · ♡ · ✧"
-    },
-    right: {
-      eyebrow: "18 MONTHS",
-      title: "Our little world",
-      text: "Eighteen months of us. Not just the big days, but all the little things that made this journey ours.",
-      script: "And we're still writing…"
-    }
+    chapterLabel: "BEFORE WE BEGIN",
+    eyebrow: "A LITTLE NOTE",
+    title: "Before we begin…",
+    text: "Some stories don't need grand beginnings. Sometimes, they grow through little moments, familiar voices, and memories that slowly become everything.",
+    ornament: "✧ · ♡ · ✧"
   },
 
   {
-    label: "OUR FIRST YEAR",
-    left: {
-      eyebrow: "CHAPTER ONE",
-      title: "The beginning",
-      text: "Our first year was filled with little moments that became big memories. We found our own ways to care, to laugh, to miss each other, and to keep choosing us. And somehow, one memory at a time, we made a little world of our own.",
-      ornament: "♡"
-    },
-    right: {
-      eyebrow: "A MEMORY TO KEEP",
-      title: "A piece of us",
-      photoGroup: "general",
-      photoIndex: 0
-    }
+    chapterLabel: "BEFORE WE BEGIN",
+    eyebrow: "18 MONTHS",
+    title: "Our little world",
+    text: "Eighteen months of us. Not just the big days, but all the little things that made this journey ours.",
+    script: "And we're still writing…",
+    ornament: "♡"
   },
 
   {
-    label: "HYDERABAD",
-    left: {
-      eyebrow: "A MEMORY FROM OUR JOURNEY",
-      title: "Hyderabad days",
-      text: "Distance changed some of our routines, but it never made our moments together any less special.",
-      ornament: "✧"
-    },
-    right: {
-      eyebrow: "TOGETHER AGAIN",
-      title: "That little moment",
-      photoGroup: "hyderabad",
-      photoIndex: 0
-    }
+    chapterLabel: "OUR FIRST YEAR",
+    eyebrow: "CHAPTER ONE",
+    title: "The beginning",
+    text: "Our first year was filled with little moments that became big memories. We found our own ways to care, to laugh, to miss each other, and to keep choosing us. And somehow, one memory at a time, we made a little world of our own.",
+    ornament: "♡"
   },
 
   {
-    label: "LITTLE MOMENTS",
-    left: {
-      eyebrow: "KEPT BETWEEN THESE PAGES",
-      title: "Another memory",
-      photoGroup: "hyderabad",
-      photoIndex: 1
-    },
-    right: {
-      eyebrow: "THE LITTLE THINGS",
-      title: "Our kind of happiness",
-      photoGroup: "general",
-      photoIndex: 1
-    }
+    chapterLabel: "OUR FIRST YEAR",
+    eyebrow: "A MEMORY TO KEEP",
+    title: "A piece of us",
+    photoGroup: "general",
+    photoIndex: 0
   },
 
   {
-    label: "JAGTIAL DAYS",
-    left: {
-      eyebrow: "A DAY TO REMEMBER",
-      title: "A little adventure",
-      text: "A place becomes special in a different way when it holds a memory of us. Jagtial will always be part of this chapter.",
-      ornament: "♡ · ✧ · ♡"
-    },
-    right: {
-      eyebrow: "A DAY WITH YOU",
-      title: "Saved in my heart",
-      photoGroup: "general",
-      photoIndex: 2
-    }
+    chapterLabel: "HYDERABAD",
+    eyebrow: "A MEMORY FROM OUR JOURNEY",
+    title: "Hyderabad days",
+    text: "Distance changed some of our routines, but it never made our moments together any less special.",
+    ornament: "✧"
   },
 
   {
-    label: "YOUR BIRTHDAY",
-    left: {
-      eyebrow: "A DAY THAT MATTERED",
-      title: "Birthday memories",
-      text: "Some birthdays are remembered for the day itself. Some are remembered for the person who made them feel different.",
-      ornament: "♡"
-    },
-    right: {
-      eyebrow: "ONE OF MY FAVOURITES",
-      title: "That day with you",
-      photoGroup: "birthday",
-      photoIndex: 0
-    }
+    chapterLabel: "HYDERABAD",
+    eyebrow: "TOGETHER AGAIN",
+    title: "That little moment",
+    photoGroup: "hyderabad",
+    photoIndex: 0
   },
 
   {
-    label: "THREE DAYS LATER",
-    left: {
-      eyebrow: "AND THEN WE MET AGAIN",
-      title: "Just three days later",
-      text: "Sometimes, even a short wait makes seeing someone again feel extra special. This was another little moment for our collection.",
-      ornament: "✧ ♡ ✧"
-    },
-    right: {
-      eyebrow: "ANOTHER PAGE OF US",
-      title: "Together, again",
-      photoGroup: "afterThreeDays",
-      photoIndex: 0
-    }
+    chapterLabel: "HYDERABAD",
+    eyebrow: "KEPT BETWEEN THESE PAGES",
+    title: "Another Hyderabad memory",
+    photoGroup: "hyderabad",
+    photoIndex: 1
   },
 
   {
-    label: "OUR LITTLE THINGS",
-    left: {
-      eyebrow: "THE THINGS THAT STAY",
-      title: "The little details",
-      text: "Not every memory needs a big story. Some deserve a place here simply because they mean something to us.",
-      ornament: "♡"
-    },
-    right: {
-      eyebrow: "TAP THE LITTLE NOTE",
-      title: "A tiny secret",
-      photoGroup: "afterThreeDays",
-      photoIndex: 1,
-      hiddenMessage: "Some moments are small to everyone else, but mean the world to me. ♡"
-    }
+    chapterLabel: "LITTLE MOMENTS",
+    eyebrow: "THE LITTLE THINGS",
+    title: "Our kind of happiness",
+    photoGroup: "general",
+    photoIndex: 1
   },
 
   {
-    label: "TO BE CONTINUED",
-    left: {
-      eyebrow: "ONE LAST THING",
-      title: "A letter for you",
-      text: "There are some things I'd rather leave in a letter, just for you.",
-      envelope: true,
-      ornament: "♡"
-    },
-    right: {
-      eyebrow: "18 MONTHS AND COUNTING",
-      title: "To be continued…",
-      isFinalPage: true,
-      text: "This book holds some of our memories, but our story is still going.",
-      script: "Infinite little moments more. ♡",
-      ornament: "✧ · ── ♡ ── · ✧"
-    }
+    chapterLabel: "JAGTIAL DAYS",
+    eyebrow: "A DAY TO REMEMBER",
+    title: "A little adventure",
+    text: "A place becomes special in a different way when it holds a memory of us. Jagtial will always be part of this chapter.",
+    ornament: "♡ · ✧ · ♡"
+  },
+
+  {
+    chapterLabel: "JAGTIAL DAYS",
+    eyebrow: "A DAY WITH YOU",
+    title: "Saved in my heart",
+    photoGroup: "general",
+    photoIndex: 2
+  },
+
+  {
+    chapterLabel: "YOUR BIRTHDAY",
+    eyebrow: "A DAY THAT MATTERED",
+    title: "Birthday memories",
+    text: "Some birthdays are remembered for the day itself. Some are remembered for the person who made them feel different.",
+    ornament: "♡"
+  },
+
+  {
+    chapterLabel: "YOUR BIRTHDAY",
+    eyebrow: "ONE OF MY FAVOURITES",
+    title: "That day with you",
+    photoGroup: "birthday",
+    photoIndex: 0
+  },
+
+  {
+    chapterLabel: "YOUR BIRTHDAY",
+    eyebrow: "ONE MORE BIRTHDAY MEMORY",
+    title: "A little piece of that day",
+    photoGroup: "birthday",
+    photoIndex: 1
+  },
+
+  {
+    chapterLabel: "THREE DAYS LATER",
+    eyebrow: "AND THEN WE MET AGAIN",
+    title: "Just three days later",
+    text: "Sometimes, even a short wait makes seeing someone again feel extra special. This was another little moment for our collection.",
+    ornament: "✧ ♡ ✧"
+  },
+
+  {
+    chapterLabel: "THREE DAYS LATER",
+    eyebrow: "ANOTHER PAGE OF US",
+    title: "Together, again",
+    photoGroup: "afterThreeDays",
+    photoIndex: 0
+  },
+
+  {
+    chapterLabel: "THREE DAYS LATER",
+    eyebrow: "KEPT CLOSE",
+    title: "The next little memory",
+    photoGroup: "afterThreeDays",
+    photoIndex: 1,
+    hiddenMessage: "Some moments are small to everyone else, but mean the world to me. ♡"
+  },
+
+  {
+    chapterLabel: "OUR LITTLE THINGS",
+    eyebrow: "THE THINGS THAT STAY",
+    title: "The little details",
+    text: "Not every memory needs a big story. Some deserve a place here simply because they mean something to us.",
+    ornament: "♡"
+  },
+
+  {
+    chapterLabel: "TO BE CONTINUED",
+    eyebrow: "ONE LAST THING",
+    title: "A letter for you",
+    text: "There are some things I'd rather leave in a letter, just for you.",
+    envelope: true,
+    ornament: "♡"
+  },
+
+  {
+    chapterLabel: "TO BE CONTINUED",
+    eyebrow: "18 MONTHS AND COUNTING",
+    title: "To be continued…",
+    isFinalPage: true,
+    text: "This book holds some of our memories, but our story is still going.",
+    script: "Infinite little moments more. ♡",
+    ornament: "✧ · ── ♡ ── · ✧"
   }
 ];
 
-
-/* 4. CONVERT THE NINE SPREADS INTO 18 PAGES */
-
-const pages = spreads.flatMap((spread, index) => [
-  { ...spread.left, chapterLabel: spread.label },
-  { ...spread.right, chapterLabel: spread.label }
-]);
-
-
-/* 5. PAGE ELEMENTS */
-
-const book = document.getElementById("book");
+/* Page elements */
 const cover = document.getElementById("cover");
-
-const leftPage = document.getElementById("leftPage");
 const rightPage = document.getElementById("rightPage");
-
-const leftContent = document.getElementById("leftContent");
 const rightContent = document.getElementById("rightContent");
-
-const leftNumber = document.getElementById("leftNumber");
 const rightNumber = document.getElementById("rightNumber");
 
 const openBookButton = document.getElementById("openBook");
@@ -269,9 +252,7 @@ let currentPage = 0;
 let bookOpened = false;
 let isTurningPage = false;
 
-
-/* 6. ESCAPE HTML */
-
+/* Escape HTML characters before inserting text into HTML. */
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, character => ({
     "&": "&amp;",
@@ -282,47 +263,31 @@ function escapeHTML(value) {
   })[character]);
 }
 
-
-/* 7. BUILD A MEMORY PHOTO */
-
+/* Build a photograph and its handwritten caption. */
 function createMemory(group, index) {
   const photo = memories[group]?.[index];
 
-  if (!photo) {
-    return `
-      <p class="page-copy">
-        Add a photo and note in the memories section
-        at the top of script.js.
-      </p>
-    `;
-  }
-
-  const src = `images/memories/${photo.photo}`;
+  if (!photo) return "";
 
   return `
     <div class="photo-wrap">
       <img
         class="memory-photo"
-        src="${escapeHTML(src)}"
+        src="images/memories/${escapeHTML(photo.photo)}"
         alt="A memory from our scrapbook"
         loading="lazy"
-        onerror="this.closest('.photo-wrap').style.display='none'"
       >
     </div>
     <p class="photo-note">${escapeHTML(photo.note)}</p>
   `;
 }
 
-
-/* 8. BUILD ONE PORTRAIT PAGE */
-
+/* Build the contents of an individual scrapbook page. */
 function buildPage(page) {
   let html = "";
 
   if (page.eyebrow) {
-    html += `
-      <p class="eyebrow">${escapeHTML(page.eyebrow)}</p>
-    `;
+    html += `<p class="eyebrow">${escapeHTML(page.eyebrow)}</p>`;
   }
 
   if (page.title) {
@@ -330,15 +295,11 @@ function buildPage(page) {
       ? "script-heading"
       : "page-heading";
 
-    html += `
-      <h2 class="${headingClass}">${escapeHTML(page.title)}</h2>
-    `;
+    html += `<h2 class="${headingClass}">${escapeHTML(page.title)}</h2>`;
   }
 
   if (page.text) {
-    html += `
-      <p class="page-copy">${escapeHTML(page.text)}</p>
-    `;
+    html += `<p class="page-copy">${escapeHTML(page.text)}</p>`;
   }
 
   if (page.photoGroup) {
@@ -351,9 +312,7 @@ function buildPage(page) {
         class="hidden-note"
         data-hidden-message="${escapeHTML(page.hiddenMessage)}"
         type="button"
-      >
-        tap here for a little secret ♡
-      </button>
+      >tap here for a little secret ♡</button>
     `;
   }
 
@@ -369,38 +328,47 @@ function buildPage(page) {
     `;
   }
 
-  if (page.ornament) {
+  if (page.isFinalPage) {
     html += `
-      <p class="ornament">${escapeHTML(page.ornament)}</p>
+      <img
+        class="signature-stamp"
+        src="images/chittichinnu/chittichinnu-stamp.png"
+        alt="ChittiChinnu love stamp"
+        loading="eager"
+      >
     `;
+  }
+
+  if (page.script) {
+    html += `<p class="photo-note">${escapeHTML(page.script)}</p>`;
+  }
+
+  if (page.ornament) {
+    html += `<p class="ornament">${escapeHTML(page.ornament)}</p>`;
   }
 
   return html;
 }
 
-
-/* 9. DISPLAY ONE PAGE AT A TIME */
-
-function renderPage() {
+/* Render the current page. */
+function renderPage(animationClass = "") {
   const page = pages[currentPage];
 
   if (!page) return;
 
-  // Hide the left sheet: only one portrait page is shown.
-  if (leftPage) {
-    leftPage.classList.remove("visible");
-    leftPage.hidden = true;
-  }
-
-  // Use the existing right-page element as the single page.
   rightPage.hidden = false;
-  rightContent.innerHTML = buildPage(page);
-  rightPage.classList.add("visible");
 
-  // Show the real page number from 01 to 18.
-  if (leftNumber) {
-    leftNumber.textContent = "";
+  rightPage.classList.remove(
+    "final-page",
+    "turn-out",
+    "turn-in"
+  );
+
+  if (page.isFinalPage) {
+    rightPage.classList.add("final-page");
   }
+
+  rightContent.innerHTML = buildPage(page);
 
   rightNumber.textContent = String(currentPage + 1).padStart(2, "0");
 
@@ -409,14 +377,18 @@ function renderPage() {
   prevButton.disabled = currentPage === 0;
   nextButton.disabled = currentPage === pages.length - 1;
 
-  // Attach the letter button only when it exists on this page.
-  const envelopeButton = document.getElementById("openLetter");
+  rightPage.classList.add("visible");
 
-  if (envelopeButton) {
-    envelopeButton.addEventListener("click", openLetter);
+  if (animationClass) {
+    rightPage.classList.add(animationClass);
   }
 
-  // Reveal the hidden note when tapped.
+  const envelope = document.getElementById("openLetter");
+
+  if (envelope) {
+    envelope.addEventListener("click", openLetter);
+  }
+
   rightContent.querySelectorAll("[data-hidden-message]").forEach(button => {
     button.addEventListener("click", () => {
       button.textContent = button.dataset.hiddenMessage;
@@ -424,11 +396,18 @@ function renderPage() {
       button.style.textDecoration = "none";
     });
   });
+
+  const image = rightContent.querySelector(".memory-photo");
+
+  if (image) {
+    image.addEventListener("error", () => {
+      const wrap = image.closest(".photo-wrap");
+      if (wrap) wrap.style.display = "none";
+    }, { once: true });
+  }
 }
 
-
-/* 10. OPEN THE SCRAPBOOK */
-
+/* Open the book cover. */
 function openBook() {
   if (bookOpened) return;
 
@@ -436,34 +415,46 @@ function openBook() {
   cover.classList.add("opened");
 
   window.setTimeout(() => {
-    cover.style.display = "none";
-    renderPage();
+    cover.hidden = true;
+    renderPage("turn-in");
   }, 650);
 }
 
 openBookButton.addEventListener("click", openBook);
 
-
-/* 11. TURN INDIVIDUAL PAGES */
-
+/* Animate navigation between pages. */
 function turnToPage(nextIndex) {
-  if (!bookOpened || isTurningPage) return;
-
-  if (nextIndex < 0 || nextIndex >= pages.length) return;
+  if (
+    !bookOpened ||
+    isTurningPage ||
+    nextIndex < 0 ||
+    nextIndex >= pages.length ||
+    nextIndex === currentPage
+  ) {
+    return;
+  }
 
   isTurningPage = true;
 
-  rightPage.classList.remove("visible");
+  const direction = nextIndex > currentPage ? "forward" : "back";
+
+  rightPage.classList.remove("turn-in");
+  rightPage.classList.add("turn-out");
 
   window.setTimeout(() => {
     currentPage = nextIndex;
-    renderPage();
 
-    window.requestAnimationFrame(() => {
-      rightPage.classList.add("visible");
+    renderPage("turn-in");
+
+    rightPage.style.transformOrigin =
+      direction === "back" ? "right center" : "left center";
+
+    window.setTimeout(() => {
+      rightPage.classList.remove("turn-in");
+      rightPage.style.transformOrigin = "left center";
       isTurningPage = false;
-    });
-  }, 180);
+    }, 600);
+  }, 390);
 }
 
 prevButton.addEventListener("click", () => {
@@ -474,9 +465,7 @@ nextButton.addEventListener("click", () => {
   turnToPage(currentPage + 1);
 });
 
-
-/* 12. SEALED LETTER */
-
+/* Open and close the letter popup. */
 function openLetter() {
   letterText.textContent = finalLetter;
 
@@ -507,11 +496,7 @@ letterDialog.addEventListener("click", event => {
   }
 });
 
-
-/* 13. BACKGROUND MUSIC
-   Add your file at docs/music/18m.mp3.
-*/
-
+/* Background music. Keep the file at docs/music/18m.mp3. */
 backgroundMusic.src = "music/18m.mp3";
 
 musicToggle.addEventListener("click", async () => {
@@ -522,7 +507,7 @@ musicToggle.addEventListener("click", async () => {
       musicToggle.title = "Pause music";
     } catch {
       musicToggle.textContent = "×";
-      musicToggle.title = "Music file not added yet";
+      musicToggle.title = "Check that music/18m.mp3 exists";
     }
   } else {
     backgroundMusic.pause();
@@ -531,9 +516,7 @@ musicToggle.addEventListener("click", async () => {
   }
 });
 
-
-/* 14. KEYBOARD NAVIGATION */
-
+/* Keyboard navigation. */
 document.addEventListener("keydown", event => {
   if (!bookOpened || letterDialog.open) return;
 
@@ -546,16 +529,11 @@ document.addEventListener("keydown", event => {
   }
 });
 
-
-/* 15. INITIAL SETUP */
-
+/* Hide the unused left page for portrait-page mode. */
 letterText.textContent = finalLetter;
 
-// Keep the left sheet hidden from the start.
+const leftPage = document.getElementById("leftPage");
+
 if (leftPage) {
   leftPage.hidden = true;
-  leftPage.classList.remove("visible");
 }
-
-// The book cover remains visible until the user opens it.
-rightPage.hidden = false;
