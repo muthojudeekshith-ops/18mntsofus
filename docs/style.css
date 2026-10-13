@@ -158,3 +158,23 @@
   font-size: 28px;
   cursor: pointer;
 }
+
+/* ChittiChinnu signature stamp */
+
+.signature-stamp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 18px auto 8px;
+}
+
+.signature-stamp img {
+  display: block;
+  width: min(125px, 38%);
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+  transform: rotate(-7deg);
+}
