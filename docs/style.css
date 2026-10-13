@@ -787,3 +787,190 @@ button { font: inherit; cursor: pointer; }
   font-style: normal !important;
   font-weight: 500;
 }
+
+/* ===== VINTAGE PASSWORD GATE ===== */
+body.locked {
+  overflow: hidden;
+}
+
+body.locked .book-scene,
+body.locked .music-toggle {
+  visibility: hidden;
+}
+
+.password-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background:
+    radial-gradient(ellipse at center, rgba(115, 75, 45, 0.2), transparent 70%),
+    #21150f;
+  color: #ead8b2;
+  transition: opacity 0.65s ease, visibility 0.65s ease;
+}
+
+.gate-card {
+  width: min(100%, 390px);
+  padding: 38px 27px;
+  text-align: center;
+  border: 1px solid rgba(210, 175, 111, 0.65);
+  outline: 1px solid rgba(210, 175, 111, 0.2);
+  outline-offset: 7px;
+  background: linear-gradient(145deg, #3b291d, #21170f 75%);
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.45);
+}
+
+.gate-eyebrow,
+.gate-footer {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 4px;
+  font-size: 10px;
+  color: #c7a66d;
+}
+
+.gate-card h1 {
+  margin: 20px 0 12px;
+  font-family: "IM Fell English", serif;
+  font-size: clamp(30px, 8vw, 39px);
+  font-weight: normal;
+  color: #ead8b2;
+}
+
+.gate-description {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #d5c2a2;
+}
+
+.vintage-lock {
+  position: relative;
+  width: 65px;
+  height: 76px;
+  margin: 30px auto 15px;
+}
+
+.lock-shackle {
+  position: absolute;
+  top: 0;
+  left: 17px;
+  width: 31px;
+  height: 37px;
+  border: 4px solid #c5a365;
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.lock-body {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  width: 55px;
+  height: 43px;
+  border: 2px solid #e0c18a;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #b18a4e, #62401f);
+  box-shadow: inset 0 0 0 3px rgba(48, 29, 14, 0.3);
+}
+
+.lock-keyhole {
+  position: absolute;
+  top: 10px;
+  left: 22px;
+  width: 8px;
+  height: 15px;
+  border-radius: 8px;
+  background: #392516;
+}
+
+#passwordForm {
+  display: grid;
+  gap: 13px;
+  margin-top: 24px;
+}
+
+#bookPassword {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 12px;
+  border: 1px solid rgba(199, 166, 109, 0.65);
+  border-radius: 2px;
+  outline: none;
+  background: rgba(15, 10, 7, 0.45);
+  color: #f0dfbe;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  text-align: center;
+}
+
+#bookPassword::placeholder {
+  color: #a99577;
+}
+
+#bookPassword:focus {
+  border-color: #e5c58b;
+  box-shadow: 0 0 12px rgba(197, 163, 101, 0.15);
+}
+
+#passwordForm button {
+  padding: 14px 10px;
+  border: 1px solid #c5a365;
+  border-radius: 2px;
+  background: #9b7040;
+  color: #fff0d0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+#passwordForm button:hover {
+  background: #b08753;
+}
+
+.password-message {
+  min-height: 20px;
+  margin: 14px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  color: #e5b9a0;
+}
+
+.gate-footer {
+  display: block;
+  margin-top: 24px;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.password-gate.shake .gate-card {
+  animation: gateShake 0.35s ease;
+}
+
+.password-gate.leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.password-gate.unlocked .lock-shackle {
+  transform: translateY(-8px) rotate(-12deg);
+  transform-origin: bottom center;
+  transition: transform 0.4s ease;
+}
+
+@keyframes gateShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-7px); }
+  75% { transform: translateX(7px); }
+}
+
+@media (max-width: 420px) {
+  .gate-card {
+    padding: 30px 21px;
+  }
+}
