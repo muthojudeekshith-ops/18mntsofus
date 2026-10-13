@@ -714,3 +714,41 @@ button { font: inherit; cursor: pointer; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Three extra memories inside the letter */
+.letter-memory-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin: 24px auto;
+}
+
+.letter-memory-gallery figure {
+  margin: 0;
+  text-align: center;
+}
+
+.letter-memory-gallery img {
+  display: block;
+  width: min(100%, 260px);
+  max-height: 300px;
+  object-fit: cover;
+  margin: 0 auto;
+  padding: 7px;
+  background: #f3e7cc;
+  border: 1px solid #b08a58;
+  box-shadow: 2px 4px 10px rgba(40, 25, 20, 0.2);
+  transform: rotate(-1deg);
+}
+
+.letter-memory-gallery figure:nth-child(2) img {
+  transform: rotate(1.5deg);
+}
+
+.letter-memory-gallery figcaption {
+  margin-top: 8px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #624638;
+}
