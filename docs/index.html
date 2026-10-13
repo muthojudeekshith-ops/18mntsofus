@@ -10,7 +10,41 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="locked">
+  
+<div class="password-gate" id="passwordGate">
+  <div class="gate-card">
+    <p class="gate-eyebrow">A LITTLE SECRET</p>
+
+    <div class="vintage-lock" aria-hidden="true">
+      <span class="lock-shackle"></span>
+      <span class="lock-body">
+        <span class="lock-keyhole"></span>
+      </span>
+    </div>
+
+    <h1>Our Little Book</h1>
+    <p class="gate-description">
+      Some stories are meant for two.<br>
+      Enter the little secret to begin.
+    </p>
+
+    <form id="passwordForm">
+      <input
+        type="password"
+        id="bookPassword"
+        placeholder="Enter the secret word"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">UNLOCK OUR STORY ♡</button>
+    </form>
+
+    <p id="passwordMessage" class="password-message" aria-live="polite"></p>
+    <span class="gate-footer">MADE WITH LOVE · JUST FOR US</span>
+  </div>
+</div>
+
   <div class="film-grain" aria-hidden="true"></div>
 
   <main class="book-scene">
