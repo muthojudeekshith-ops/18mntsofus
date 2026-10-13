@@ -54,14 +54,19 @@ const memories = {
   ]
 };
 
-const finalLetter = `Eighteen months of memories, little moments,
-conversations, laughter, and everything in between.
+const finalLetter = `EIGHTEEN MONTHS THAT MEAN 1½ YEAR,
+Yeah! we had Happy day , sad days , days where we couldn't talk, day where we alomst gave-up.
+But , we didn't & that is what usღ
+I HOPE WE WILL HAVE BETTER DAY THAN WE PASSED THROUGH.
+           HAPPY 18 MOTHS BABY
+I LOVE YOU , I LOVE YOU & I LOVE YOU SO MUCH დ♡...
 
 Every memory has its own place in my heart.
 Even the simplest days became special in their
 own little way because they were part of us.
 
-This is not the end of our story.
+This is not the end of our story,
+And there is not end for our story.
 There are still so many moments waiting for us,
 so many memories we haven't made yet.
 
@@ -204,10 +209,10 @@ const pages = [
   },
 
   {
-    chapterLabel: "OUR LITTLE THINGS",
+    chapterLabel: "THE THING MEAN THIS BOOK FOR",
     eyebrow: "˚ʚ♡ɞ˚",
-    title: "THE I WANT TO SAY IS ",
-    text: " Everything of you maynot be perfect , and you being you seems perfect❃.",
+    title: "The thing I want to say is:  ",
+    text: " HAPPY 18 MONTH , and HAPPY DUSSEHRA MY LOVELY PRINCESS ❃............  I HOPE WE WILL HAVE BETTER DAYS, AND WE MAY OR MAY MEET THIS DUSSHERA, BUT FOR SOME DUSSEHRA WE WILL CELEBRATE AS MARRIED COUPLES AND BY NEXT DHUSSEHRA COMES ON THIS DAY , WE WILL HAVE KIDS AND OUR FAMILY WILL CELEBRATING DUSSEHRA.. THIS IS MY PROMISE....  BABE, I LOVE YOU ",
     ornament: "♡"
   },
 
@@ -494,15 +499,15 @@ function openLetter(){
     <div class="letter-memory-gallery">
       <figure>
         <img src="images/memories/m4.jpeg" alt="A special memory">
-        <figcaption>One more little piece of us ♡</figcaption>
+        <figcaption> i love this cute kido of you baby ; i hope i'll always desever my kidoo₊˚⊹♡ ♡</figcaption>
       </figure>
       <figure>
         <img src="images/memories/m5.jpeg" alt="Another special memory">
-        <figcaption>A moment I want to keep forever.</figcaption>
+        <figcaption> i'll always be craving for your kisses wheather it's online or offline ☺ </figcaption>
       </figure>
       <figure>
         <img src="images/memories/m6.jpeg" alt="A memory close to my heart">
-        <figcaption>And so many more memories to make. ♡</figcaption>
+        <figcaption>A moment I want to keep us forever like this ∞♡∞</figcaption>
       </figure>
     </div>
     <p>${finalLetter.split("\n\n").slice(1).join("\n\n").replace(/\n/g,"<br>")}</p>
