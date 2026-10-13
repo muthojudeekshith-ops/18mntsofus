@@ -974,3 +974,75 @@ body.locked .music-toggle {
     padding: 30px 21px;
   }
 }
+
+/* FIX: Properly center and style the vintage password gate */
+.password-gate {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px !important;
+  background: rgba(28, 17, 12, 0.96) !important;
+}
+
+.password-gate .gate-card {
+  display: block !important;
+  width: min(360px, 100%) !important;
+  box-sizing: border-box !important;
+  margin: auto !important;
+  padding: 38px 28px !important;
+  text-align: center !important;
+  background: linear-gradient(145deg, #55372b, #2c1c15) !important;
+  color: #ead6ac !important;
+  border: 3px double #c6a46b !important;
+  outline: 1px solid #80613d;
+  outline-offset: 5px;
+  box-shadow: 0 20px 70px #0009 !important;
+}
+
+.password-gate .gate-card h1 {
+  color: #ead6ac !important;
+}
+
+.password-gate #passwordForm {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.password-gate #bookPassword {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  padding: 13px !important;
+  background: #21150f !important;
+  color: #f5e4c3 !important;
+  border: 1px solid #b89963 !important;
+  text-align: center !important;
+}
+
+.password-gate #passwordForm button {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px 8px !important;
+  background: #8b6240 !important;
+  color: #fff0d0 !important;
+  border: 1px solid #d4b57d !important;
+  cursor: pointer;
+}
+
+body.locked {
+  overflow: hidden !important;
+}
+
+body.locked .book-scene,
+body.locked .music-toggle {
+  visibility: hidden !important;
+}
