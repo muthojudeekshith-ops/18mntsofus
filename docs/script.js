@@ -499,7 +499,7 @@ function openLetter(){
     <div class="letter-memory-gallery">
       <figure>
         <img src="images/memories/m4.jpeg" alt="A special memory">
-        <figcaption> i love this cute kido of you baby ; i hope i'll always desever my kidoo₊˚⊹♡ ♡</figcaption>
+        <figcaption> i love this cute kido side of my baby ; i hope i'll always desever my kidoo₊˚⊹♡ ♡</figcaption>
       </figure>
       <figure>
         <img src="images/memories/m5.jpeg" alt="Another special memory">
