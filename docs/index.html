@@ -16,13 +16,39 @@
   <div class="gate-card">
     <p class="gate-eyebrow">A LITTLE SECRET</p>
 
+    ```html
     <div class="vintage-lock" aria-hidden="true">
       <span class="lock-shackle"></span>
       <span class="lock-body">
         <span class="lock-keyhole"></span>
       </span>
     </div>
-    
+
+    <h1>Our Little Book</h1>
+
+    <p class="gate-description">
+      Some stories are meant for two.<br>
+      Enter the little secret to begin.
+    </p>
+
+    <form id="passwordForm">
+      <input
+        type="password"
+        id="bookPassword"
+        placeholder="Enter the secret word"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">UNLOCK OUR STORY ♡</button>
+    </form>
+
+    <p id="passwordMessage" class="password-message" aria-live="polite"></p>
+
+    <span class="gate-footer">MADE WITH LOVE · JUST FOR US</span>
+  </div>
+</div>
+
+<!-- COUNTDOWN — OUTSIDE PASSWORD GATE -->
 <div class="preview-gate" id="previewGate" hidden>
   <div class="preview-card">
     <p class="preview-eyebrow">♡ A LITTLE SOMETHING FOR YOU ♡</p>
@@ -38,10 +64,11 @@
       <div><span id="previewSeconds">00</span><small>SECONDS</small></div>
     </div>
 
-    <p class="preview-date">20 · 10 · 2026 — 12:00 AM</p>
+    <p class="preview-date">20 · 10 · 2026 — 12:00 AM IST</p>
     <p class="preview-note">A little more patience, my love ♡</p>
   </div>
 </div>
+```
 
 
     <h1>Our Little Book</h1>
