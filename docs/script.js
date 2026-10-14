@@ -580,21 +580,80 @@ if (leftPage) {
   leftPage.hidden = true;
 }
 
-/* ===== VINTAGE PASSWORD GATE ===== */
+
+/* ===== PASSWORD GATE + PREVIEW COUNTDOWN ===== */
 (() => {
   const gate = document.getElementById("passwordGate");
   const form = document.getElementById("passwordForm");
   const input = document.getElementById("bookPassword");
   const message = document.getElementById("passwordMessage");
+  const preview = document.getElementById("previewGate");
 
-  if (!gate || !form || !input || !message) return;
+  if (!gate || !form || !input || !message || !preview) return;
 
-  input.focus();
+  const targetDate = new Date("2026-10-20T00:00:00+05:30").getTime();
+
+  let timer = null;
+  let previewShown = false;
+
+  function openBookWhenReady() {
+    if (Date.now() < targetDate) return;
+
+    previewShown = false;
+    preview.hidden = true;
+
+    const cover = document.getElementById("cover");
+    if (cover && !cover.hidden) {
+      const openButton = document.getElementById("openBook");
+      if (openButton) openButton.focus();
+    }
+  }
+
+  function updatePreviewCountdown() {
+    const remaining = targetDate - Date.now();
+
+    const values = {
+      previewDays: Math.max(0, Math.floor(remaining / 86400000)),
+      previewHours: Math.max(0, Math.floor((remaining % 86400000) / 3600000)),
+      previewMinutes: Math.max(0, Math.floor((remaining % 3600000) / 60000)),
+      previewSeconds: Math.max(0, Math.floor((remaining % 60000) / 1000))
+    };
+
+    Object.entries(values).forEach(([id, value]) => {
+      const element = document.getElementById(id);
+      if (element) element.textContent = String(value).padStart(2, "0");
+    });
+
+    if (remaining <= 0) {
+      clearInterval(timer);
+      timer = null;
+      preview.hidden = true;
+      previewShown = false;
+      document.body.classList.remove("locked");
+      openBookWhenReady();
+    }
+  }
+
+  function showPreview() {
+    if (Date.now() >= targetDate) {
+      document.body.classList.remove("locked");
+      preview.hidden = true;
+      const openButton = document.getElementById("openBook");
+      if (openButton) openButton.focus();
+      return;
+    }
+
+    previewShown = true;
+    preview.hidden = false;
+    updatePreviewCountdown();
+
+    if (!timer) timer = setInterval(updatePreviewCountdown, 1000);
+  }
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (input.value.trim().toLowerCase() !== "usforever") {
+    if (input.value.trim().toLowerCase() !== "book") {
       message.textContent = "Not quite, sweetheart. Try again ♡";
       gate.classList.remove("shake");
       void gate.offsetWidth;
@@ -604,17 +663,23 @@ if (leftPage) {
     }
 
     message.textContent = "The story is waiting for you ♡";
-    form.querySelector("button").disabled = true;
     input.disabled = true;
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) submitButton.disabled = true;
+
     gate.classList.add("unlocked");
 
     window.setTimeout(() => {
-      document.body.classList.remove("locked");
-      gate.classList.add("leaving");
-
-      window.setTimeout(() => {
-        gate.remove();
-      }, 700);
-    }, 900);
+      gate.remove();
+      showPreview();
+    }, 700);
   });
+
+  // If the target date has already passed, don't show the preview gate.
+  if (Date.now() >= targetDate) {
+    document.body.classList.remove("locked");
+    preview.hidden = true;
+  }
 })();
+
